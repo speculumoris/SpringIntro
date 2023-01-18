@@ -5,16 +5,12 @@ import com.tpe.dto.StudentDTO;
 import com.tpe.exception.ConflictException;
 import com.tpe.exception.ResourceNotFoundException;
 import com.tpe.repository.StudentRepository;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-
 
 @Service
 public class StudentService {
@@ -71,19 +67,20 @@ public class StudentService {
 
     public Page<Student> getAllWithPage(Pageable pageable) {
 
-        return studentRepository.findAll(pageable);
+       return studentRepository.findAll(pageable); // SQL
     }
+
     public List<Student> findStudent(String lastName){
 
         return studentRepository.findByLastName(lastName);
     }
 
     public List<Student> findAllEqualsGrade(Integer grade) {
-        return studentRepository.findAllEqualsGrade(grade);
+         return studentRepository.findAllEqualsGrade(grade);
     }
 
     public StudentDTO findStudentDTOById(Long id) {
         return studentRepository.findStudentDTOById(id).orElseThrow(()->
-                new ResourceNotFoundException("Student ne found with id :" +id));
+                new ResourceNotFoundException("Student not found with id : " + id));
     }
 }

@@ -10,6 +10,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
 
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -28,6 +29,7 @@ public class StudentDTO {
     private String lastName;
 
     private  Integer grade;
+
 
 
     @Email(message="Provide valid email")
@@ -51,11 +53,3 @@ public class StudentDTO {
 
 
 }
-
-
-
-
-
-
-
-
