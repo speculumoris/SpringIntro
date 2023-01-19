@@ -49,7 +49,7 @@ public class Student {
     private LocalDateTime createDate = LocalDateTime.now();
 
     @OneToMany(mappedBy = "student")
-    private List<Book> books=new ArrayList<>();
+    private List<Book> books = new ArrayList<>();
 
 
 }

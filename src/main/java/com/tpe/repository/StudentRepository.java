@@ -16,7 +16,7 @@ public interface StudentRepository extends JpaRepository<Student, Long > {
     // Spring Data JPA içinde existById() var fakat Spring Data JPA bize sondaki eki istediğimiz değişken ismi ile
     //değiştirmemize izin veriyor, mevcut metodu bu şekilde türetebiliyoruz.
 
-    List<Student> findByLastName(String lastName);
+    List<Student> findByLastName(String lastName); // lastName
 
     // !!! JPQL ************************
     @Query("SELECT s from Student s WHERE s.grade=:pGrade")    // Student --> s

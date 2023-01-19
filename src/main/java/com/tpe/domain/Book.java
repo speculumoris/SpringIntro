@@ -11,15 +11,13 @@ import javax.persistence.*;
 @Setter
 @NoArgsConstructor
 public class Book {  // one Student/ many book
-   
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     @JsonProperty("bookName") // JSON çıktıda isminin "bookName" olmasını sağladık
     private String name;
 
-    @JsonIgnore
+    @JsonIgnore // sonsuz döngüye girilmesin diye @JsonIgnore eklendi
     @ManyToOne
     @JoinColumn(name="student_id")
     private Student student;

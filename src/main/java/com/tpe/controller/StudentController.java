@@ -24,7 +24,7 @@ import java.util.Map;
 @RequestMapping("/students") // http://localhost:8080/students
 public class StudentController {
 
-   Logger logger=LoggerFactory.getLogger(StudentController.class);
+    Logger logger = LoggerFactory.getLogger(StudentController.class);
 
     @Autowired
     private StudentService studentService;
@@ -135,11 +135,12 @@ public class StudentController {
         return ResponseEntity.ok(studentDTO);
     }
 
-    @GetMapping("/welcome")  // http://locaklhost:8080/students/welcome + GET
+    @GetMapping("/welcome")  // http://localhost:8080/students/welcome + GET
     public String welcome(HttpServletRequest request){ //  HttpServletRequest ile request e ulaştım
         logger.warn("-------------------- Welcome {}", request.getServletPath());
         return "Student Controller a Hoş Geldiniz";
     }
+
 
 }
 
