@@ -1,12 +1,13 @@
 package com.tpe.repository;
 
-import com.tpe.domain.User;
-import com.tpe.exception.ResourceNotFoundException;
-import org.springframework.data.jpa.repository.JpaRepository;
+import com.tpe.domain.*;
+import com.tpe.exception.*;
+import org.springframework.data.jpa.repository.*;
 
-import java.util.Optional;
+import java.util.*;
 
-public interface UserRepository extends JpaRepository<User,Long> {
+public interface UserRepository extends JpaRepository<User, Long> {
+
 
     Optional<User> findByUserName(String userName) throws ResourceNotFoundException;
 }
