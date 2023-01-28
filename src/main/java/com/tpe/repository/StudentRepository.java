@@ -28,4 +28,5 @@ public interface StudentRepository extends JpaRepository<Student, Long > {
 
     @Query("SELECT new com.tpe.dto.StudentDTO(s) FROM Student s WHERE s.id=:id ")   // Student s
     Optional<StudentDTO> findStudentDTOById(@Param("id") Long id);
+
 }

@@ -80,7 +80,7 @@ public class StudentService {
     }
 
     public StudentDTO findStudentDTOById(Long id) {
-        return studentRepository.findStudentDTOById(id).orElseThrow(()->
-                new ResourceNotFoundException("Student not found with id : " + id));
+        return studentRepository.findStudentDTOById(id).orElseThrow(
+                () -> new ResourceNotFoundException("Student not found with id : " + id));
     }
 }
